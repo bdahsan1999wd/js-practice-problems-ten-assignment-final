@@ -5,7 +5,7 @@
 function gemsToDiamond(num1, num2, num3){
     const totalGems = (num1 * 21) + (num2 * 32) + (num3 * 43);
 
-    if(typeof num1, num2, num3 === 'string'){
+    if(typeof num1 === 'string' || typeof num2 === 'string' || typeof num3 === 'string'){
         return 'Please provide a number...';
     }
     else if(totalGems >= 2000){
@@ -16,4 +16,4 @@ function gemsToDiamond(num1, num2, num3){
         return totalGems;
     }
 }
-// console.log('gemsToDiamond:',gemsToDiamond(100, 5, 1));
+console.log('gemsToDiamond:',gemsToDiamond(100, 5, 1));
