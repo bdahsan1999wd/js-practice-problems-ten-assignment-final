@@ -329,3 +329,182 @@ Write a function that converts a given amount between **US Dollar (USD)** and **
 | 50, "X", "BDT"     | Invalid Input |
 | 50, "USD", "Y"     | Invalid Input |
 | "20", "USD", "BDT" | Invalid Input |
+
+---
+
+## **Problem-11: Theater Ticket Sale Profit Calculator**
+
+⚠️ **Function Name Must be `calculateMoney()`**
+
+A theater sells tickets at **120 BDT** each. Every month, the theater has some fixed and variable costs:
+
+- **Fixed cost:** 500 BDT
+- **Variable cost:** 50 BDT per staff member (8 staff members)
+
+You need to create a function to calculate the **remaining money** after selling a certain number of tickets and subtracting all costs.
+
+Your function will take **one input**:
+
+1. **ticketSale** – A positive number representing the number of tickets sold.
+
+The remaining money should be calculated as:
+
+| Input | A positive number representing the number of tickets sold. |
+| :---- | :--------------------------------------------------------- |
+
+| Output | The remaining money after deducting all costs. |
+| :----- | :--------------------------------------------- |
+
+| Challenge 📢 | If the input is not a number or is negative, return `"Invalid number"`. |
+| :----------- | :---------------------------------------------------------------------- |
+
+| SAMPLE INPUT | SAMPLE OUTPUT  |
+| :----------- | :------------- |
+| 10           | 300            |
+| 1055         | 125700         |
+| 93           | 10260          |
+| -130         | Invalid number |
+| "Hello"      | Invalid number |
+
+---
+
+## **Problem-12: Good or Bad Name Checker**
+
+⚠️ **Function Name Must be `checkName()`**
+
+Create a function that checks whether a name is **good** or **bad** based on its **last letter**.
+
+- If the last letter of the name is one of **['a', 'y', 'i', 'e', 'o', 'u', 'w']** (case-insensitive), it is considered a **good name**.
+- Otherwise, it is considered a **bad name**.
+
+Your function should handle invalid inputs properly.
+
+### Input
+
+1. **name** – A string representing a person's name.
+
+| Input | A string representing the name. |
+| :---- | :------------------------------ |
+
+### Output
+
+- `"Good Name"` if the last letter matches the criteria.
+- `"Bad Name"` if the last letter does not match the criteria.
+- `"Invalid"` if the input is not a string.
+
+### Challenge 📢
+
+- The comparison should be **case-insensitive**.
+- Handle non-string inputs (numbers, arrays, objects, etc.) by returning `"Invalid"`.
+
+| SAMPLE INPUT | SAMPLE OUTPUT |
+| :----------- | :------------ |
+| 'Salman'     | Bad Name      |
+| 'RAFEE'      | Good Name     |
+| 'jhankar'    | Bad Name      |
+| 199          | Invalid       |
+| ['Rashed']   | Invalid       |
+
+---
+
+## **Problem-13: Remove Invalid Numbers from Array**
+
+⚠️ **Function Name Must be `deleteInvalids()`**
+
+Create a function that takes an array and **removes all invalid elements**, keeping only valid numbers.
+
+- A valid number is any element of type **number** and **not NaN**.
+- All other types (`string`, `null`, `undefined`, `NaN`, objects, arrays, etc.) should be removed.
+
+### Input
+
+1. **array** – An array containing elements of any type.
+
+| Input | An array of elements (numbers, strings, null, undefined, objects, etc.) |
+| :---- | :---------------------------------------------------------------------- |
+
+### Output
+
+- A new array containing **only valid numbers**.
+- If the input is not an array, return `"Invalid Array"`.
+
+### SAMPLE INPUT | SAMPLE OUTPUT
+
+| SAMPLE INPUT                                                  | SAMPLE OUTPUT |
+| :------------------------------------------------------------ | :------------ |
+| [1, null, undefined, 18, -19, NaN, '12', [1,2], {ob: 'lala'}] | [1, 18, -19]  |
+| ['1', { num: 2 }, NaN]                                        | []            |
+| [1, 2, -3]                                                    | [1, 2, -3]    |
+| { num: [1, 2, 3] }                                            | Invalid Array |
+
+---
+
+## **Problem-14: Password Generator**
+
+⚠️ **Function Name Must be `password()`**
+
+Create a function that generates a password using the user's **name**, **birth year**, and **website name**.
+
+The password format should be:
+**CapitalizedSiteName#Name@BirthYear**
+
+### Input
+
+1. **obj** – An object containing the following properties:
+   - `name` – User's name (string)
+   - `birthYear` – User's birth year (number, 4 digits)
+   - `siteName` – Name of the website (string)
+
+| Input | An object with properties `name`, `birthYear`, and `siteName`. |
+| :---- | :------------------------------------------------------------- |
+
+### Output
+
+- A string representing the generated password in the format **CapitalizedSiteName#Name@BirthYear**.
+- If any property is missing or `birthYear` is not 4 digits, return `"Invalid"`.
+
+### SAMPLE INPUT | SAMPLE OUTPUT
+
+| SAMPLE INPUT                                                | SAMPLE OUTPUT          |
+| :---------------------------------------------------------- | :--------------------- |
+| { name: 'kolimuddin', birthYear: 1999, siteName: 'google' } | Google#kolimuddin@1999 |
+| { name: 'rahat', birthYear: 2002, siteName: 'Facebook' }    | Facebook#rahat@2002    |
+| { name: 'toky', birthYear: 200, siteName: 'Facebook' }      | Invalid                |
+
+---
+
+## **Problem-15: Monthly Savings Calculator**
+
+⚠️ **Function Name Must be `monthlySavings()`**
+
+Create a function to calculate how much money a person saves at the end of the month after deducting **living costs** and applying **taxes** on high-income payments.
+
+### Input
+
+1. **arr** – An array of numbers representing monthly income payments.
+2. **livingCost** – A number representing monthly living expenses.
+
+### Rules
+
+- For each payment in `arr`:
+  - If payment is **≥ 3000**, apply **20% tax**.
+  - If payment is **< 3000**, no tax is applied.
+- Total income after tax minus `livingCost` is the monthly savings.
+- If savings are negative, return `"earn more"`.
+
+| Input | An array of numbers representing payments and a number for living costs. |
+| :---- | :----------------------------------------------------------------------- |
+
+### Output
+
+- Returns a number representing savings, or `"earn more"` if the person is in deficit.
+- If inputs are invalid (first input not array, second input not number), return `"Invalid input"`.
+
+### SAMPLE INPUT | SAMPLE OUTPUT
+
+| SAMPLE INPUT             | SAMPLE OUTPUT |
+| :----------------------- | :------------ |
+| [1000, 2000, 3000], 5400 | 100           |
+| [1000, 2000, 2500], 5000 | 500           |
+| [900, 2700, 3400], 10000 | earn more     |
+| 100, [900, 2700, 3400]   | Invalid input |
