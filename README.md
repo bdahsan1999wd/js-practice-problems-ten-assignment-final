@@ -508,3 +508,182 @@ Create a function to calculate how much money a person saves at the end of the m
 | [1000, 2000, 2500], 5000 | 500           |
 | [900, 2700, 3400], 10000 | earn more     |
 | 100, [900, 2700, 3400]   | Invalid input |
+
+---
+
+## **Problem-16: Social Media Post Analytics**
+
+⚠️ **Function Name Must be `postAnalytics()`**
+
+Create a function that analyzes a list of posts and calculates total **likes**, **comments**, and **shares**.
+
+### Input
+
+- `posts` – An array of objects, where each object has:
+  - `likes` (number)
+  - `comments` (number)
+  - `shares` (number)
+
+| Input | An array of post objects with likes, comments, and shares. |
+| :---- | :--------------------------------------------------------- |
+
+### Rules
+
+- Calculate the total likes, total comments, and total shares.
+- Return an object with these three values.
+- If the input is invalid, return `"Invalid input"`.
+
+### Output
+
+- Returns an object: `{ totalLikes, totalComments, totalShares }`.
+
+### SAMPLE INPUT | SAMPLE OUTPUT
+
+| SAMPLE INPUT                                                                       | SAMPLE OUTPUT                                           |
+| :--------------------------------------------------------------------------------- | :------------------------------------------------------ |
+| [ {likes: 100, comments: 20, shares: 10}, {likes: 50, comments: 10, shares: 5} ]   | { totalLikes: 150, totalComments: 30, totalShares: 15 } |
+| [ {likes: 200, comments: 30, shares: 25}, {likes: 100, comments: 20, shares: 10} ] | { totalLikes: 300, totalComments: 50, totalShares: 35 } |
+| [ {likes: "abc", comments: 20, shares: 5} ]                                        | Invalid input                                           |
+
+---
+
+## Problem-17: Hospital Patient Management
+
+⚠️ **Function Name Must be `managePatients()`**
+
+Create a function to manage patient records in a hospital.
+
+### Input
+
+- `patients` – An array of objects, where each object has:
+  - `name` (string)
+  - `age` (number)
+  - `disease` (string)
+- `minAge` – A number representing the minimum age to filter patients.
+
+| Input | An array of patient objects and a number for minimum age. |
+| :---- | :-------------------------------------------------------- |
+
+### Rules
+
+- Return a list of patients whose age is greater than or equal to `minAge`.
+- If input is invalid, return `"Invalid input"`.
+
+### Output
+
+- Returns a filtered array of patient objects.
+
+### SAMPLE INPUT | SAMPLE OUTPUT
+
+| SAMPLE INPUT                                                                            | SAMPLE OUTPUT                                                                       |
+| :-------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------- |
+| [ {name: "A", age: 30, disease: "Flu"}, {name: "B", age: 20, disease: "Cold"} ], 25     | [ {name: "A", age: 30, disease: "Flu"} ]                                            |
+| [ {name: "C", age: 40, disease: "Fever"}, {name: "D", age: 50, disease: "Asthma"} ], 35 | [ {name: "C", age: 40, disease: "Fever"}, {name: "D", age: 50, disease: "Asthma"} ] |
+| [ {name: "E", age: "abc", disease: "Cough"} ], 20                                       | Invalid input                                                                       |
+
+---
+
+## Problem-18: Online Voting System
+
+⚠️ **Function Name Must be `votingSystem()`**
+
+Create a function that counts votes and determines the winner.
+
+### Input
+
+- `votes` – An array of strings where each string is a candidate's name.
+
+| Input | An array of strings representing votes. |
+| :---- | :-------------------------------------- |
+
+### Rules
+
+- Count how many votes each candidate got.
+- Return the candidate with the highest votes.
+- If there is a tie, return `"Tie"`.
+- If input is invalid, return `"Invalid input"`.
+
+### Output
+
+- Returns a string (winner’s name) or `"Tie"`.
+
+### SAMPLE INPUT | SAMPLE OUTPUT
+
+| SAMPLE INPUT                         | SAMPLE OUTPUT   |
+| :----------------------------------- | :-------------- |
+| ["Hasan", "Rafiq", "Hasan", "Amin"]  | "Hasan"         |
+| ["Kamal", "Rafiq", "Kamal", "Rafiq"] | "Tie"           |
+| [123, "Hasan"]                       | "Invalid input" |
+
+---
+
+## Problem-19: University Course Registration
+
+⚠️ **Function Name Must be `registerCourse()`**
+
+Create a function to handle student course registration.
+
+### Input
+
+- `students` – An array of objects, where each has:
+  - `name` (string)
+  - `courses` (array of strings)
+- `studentName` – A string (name of student).
+- `courseName` – A string (name of course to register).
+
+| Input | An array of student objects, a string for student name, and a string for course name. |
+| :---- | :------------------------------------------------------------------------------------ |
+
+### Rules
+
+- Add the `courseName` to the student's course list if not already enrolled.
+- If the student does not exist, return `"Student not found"`.
+- If inputs are invalid, return `"Invalid input"`.
+
+### Output
+
+- Returns the updated student object.
+
+### SAMPLE INPUT | SAMPLE OUTPUT
+
+| SAMPLE INPUT                                                                          | SAMPLE OUTPUT                             |
+| :------------------------------------------------------------------------------------ | :---------------------------------------- |
+| [ {name: "A", courses: ["Math"]}, {name: "B", courses: ["English"]} ], "A", "Science" | {name: "A", courses: ["Math", "Science"]} |
+| [ {name: "C", courses: ["Biology"]} ], "D", "Physics"                                 | "Student not found"                       |
+| [ {name: "E", courses: "NotArray"} ], "E", "Math"                                     | "Invalid input"                           |
+
+---
+
+## Problem-20: Bank Transaction Analyzer
+
+⚠️ **Function Name Must be `analyzeTransactions()`**
+
+Create a function that analyzes bank transactions.
+
+### Input
+
+- `transactions` – An array of objects, where each has:
+  - `type` (string: "deposit" or "withdraw")
+  - `amount` (number)
+
+| Input | An array of transaction objects with type and amount. |
+| :---- | :---------------------------------------------------- |
+
+### Rules
+
+- Calculate the total deposits, total withdrawals, and final balance.
+- Initial balance is 0.
+- If withdrawals exceed balance, return `"Insufficient funds"`.
+- If input is invalid, return `"Invalid input"`.
+
+### Output
+
+- Returns an object: `{ totalDeposits, totalWithdrawals, balance }`.
+
+### SAMPLE INPUT | SAMPLE OUTPUT
+
+| SAMPLE INPUT                                                                                           | SAMPLE OUTPUT                                                  |
+| :----------------------------------------------------------------------------------------------------- | :------------------------------------------------------------- |
+| [ {type: "deposit", amount: 5000}, {type: "withdraw", amount: 2000}, {type: "deposit", amount: 3000} ] | { totalDeposits: 8000, totalWithdrawals: 2000, balance: 6000 } |
+| [ {type: "withdraw", amount: 1000} ]                                                                   | "Insufficient funds"                                           |
+| [ {type: "deposit", amount: "abc"} ]                                                                   | "Invalid input"                                                |
